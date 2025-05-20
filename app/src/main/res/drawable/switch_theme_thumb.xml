@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false"
+        android:top="3dp" android:bottom="3dp"
+        android:left="3dp" android:right="3dp">
+        <shape android:dither="true" android:shape="rectangle" android:useLevel="false" android:visible="true">
+            <corners android:radius="100dp"/>
+            <size android:width="120dp" android:height="0dp"/>
+        </shape>
+    </item>
+</layer-list>

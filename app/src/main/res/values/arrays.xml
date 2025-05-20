@@ -1,0 +1,69 @@
+<resources>
+    <string-array name="am_pm">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+
+    <string-array name="days_of_week">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="days_of_week_abbrv">
+        <item>Su</item>
+        <item>M</item>
+        <item>Tu</item>
+        <item>W</item>
+        <item>Th</item>
+        <item>F</item>
+        <item>Sa</item>
+    </string-array>
+
+    <string-array name="zones">
+        <item>Pacific/Midway</item>
+        <item>Pacific/Honolulu</item>
+        <item>America/Anchorage</item>
+        <item>America/Los_Angeles</item>
+        <item>America/Denver</item>
+        <item>America/Chicago</item>
+        <item>America/New_York</item>
+        <item>America/Sao_Paulo</item>
+        <item>Atlantic/Azores</item>
+        <item>Europe/London</item>
+        <item>Europe/Berlin</item>
+        <item>Europe/Athens</item>
+        <item>Asia/Dubai</item>
+        <item>Asia/Kolkata</item>
+        <item>Asia/Bangkok</item>
+        <item>Asia/Shanghai</item>
+        <item>Asia/Tokyo</item>
+        <item>Australia/Sydney</item>
+        <item>Pacific/Auckland</item>
+    </string-array>
+
+    <string-array name="image_attributions">
+        <item>amoghdesign</item>
+        <item>Fathema Khanom</item>
+        <item>Freepik</item>
+        <item>Hight Quality Icons</item>
+        <item>Icon.doit</item>
+        <item>Marcus Christensen</item>
+        <item>Roundicons Premium</item>
+    </string-array>
+
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+</resources>

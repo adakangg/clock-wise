@@ -1,0 +1,43 @@
+<resources>
+    <style name="Theme.AlarmClock" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="primaryText">#5093e1</item>
+        <item name="switchOffBackground">#626262</item>
+        <item name="switchOnBackground">#5093e1</item>
+        <item name="switchThemeNightText">#938F99</item>
+        <item name="switchThemeDayText">#ffffff</item>
+        <item name="mapMarker">#5093e1</item>
+
+        <item name="colorPrimary">#5093e1</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="colorPrimaryContainer">#2c2c2e</item>
+        <item name="colorOnPrimaryContainer">#ffffff</item>
+
+        <item name="colorSecondary">#3264c3</item>
+        <item name="colorOnSecondary">#ffffff</item>
+        <item name="colorSecondaryContainer">#38383b</item>
+        <item name="colorOnSecondaryContainer">#ffffff</item>
+
+        <item name="colorTertiary">#EFB8C8</item>
+        <item name="colorOnTertiary">#492532</item>
+        <item name="colorTertiaryContainer">#633B48</item>
+        <item name="colorOnTertiaryContainer">#FFD8E4</item>
+
+        <item name="colorError">#F2B8B5</item>
+        <item name="colorOnError">#601410</item>
+        <item name="colorErrorContainer">#8C1D18</item>
+        <item name="colorOnErrorContainer">#F9DEDC</item>
+
+        <item name="colorSurface">#1c1c1e</item>
+        <item name="colorOnSurface">#fbfbfc</item>
+        <item name="colorSurfaceVariant">#252526</item>
+        <item name="colorOnSurfaceVariant">#fbfbfc</item>
+        <item name="colorOutline">#938F99</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Base.Theme.AlarmClock" parent="Theme.Material3.DayNight.NoActionBar" />
+</resources>

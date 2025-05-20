@@ -1,0 +1,59 @@
+<resources>
+    <style name="Theme.AlarmClock" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="primaryText">#507bf2</item>
+        <item name="switchOffBackground">#bfceff</item>
+        <item name="switchOnBackground">#789bff</item>
+        <item name="switchThemeNightText">#2b3558</item>
+        <item name="switchThemeDayText">#787c82</item>
+        <item name="mapMarker">#507bf2</item>
+
+        <item name="colorPrimary">#507bf2</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#eff3ff</item>
+        <item name="colorOnPrimaryContainer">#191f52</item>
+        <item name="colorPrimaryInverse">#c1d4fc</item>
+
+        <item name="colorSecondary">#2f5ad4</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#e3e9ff</item>
+        <item name="colorOnSecondaryContainer">#191f52</item>
+
+        <item name="colorTertiary">#7D5260</item>
+        <item name="colorOnTertiary">#FFFFFF</item>
+        <item name="colorTertiaryContainer">#FFD8E4</item>
+        <item name="colorOnTertiaryContainer">#31111D</item>
+
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorErrorContainer">#F9DEDC</item>
+        <item name="colorOnErrorContainer">#410E0B</item>
+
+        <item name="colorSurface">?attr/colorBackgroundFloating</item>
+        <item name="colorOnSurface">#1D1B20</item>
+        <item name="colorSurfaceVariant">#E7E0EC</item>
+        <item name="colorOnSurfaceVariant">#2b3558</item>
+        <item name="colorOutline">#787c82</item>
+
+        <item name="materialTimePickerTheme">@style/CustomTimePickerStyle</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="Theme.AlarmClock.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AlarmClock.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AlarmClock.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Base.Theme.AlarmClock" parent="Theme.Material3.DayNight.NoActionBar" />
+</resources>

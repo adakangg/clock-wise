@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmInfoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="beforeDescendants">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_alarm_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_alarm_info"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme="@style/CustomToolbarStyle"
+                app:title=" " />
+
+            <LinearLayout
+                android:id="@+id/layout_timepicker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_alarm_info">
+
+                <NumberPicker
+                    android:id="@+id/picker_hr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:theme="@style/CustomAlarmTimePickerStyle" />
+
+                <TextView
+                    android:id="@+id/text_time_colon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:paddingBottom="18dp"
+                    android:text="@string/text_colon"
+                    android:textSize="32sp" />
+
+                <NumberPicker
+                    android:id="@+id/picker_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:theme="@style/CustomAlarmTimePickerStyle" />
+
+                <NumberPicker
+                    android:id="@+id/picker_am_pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:theme="@style/CustomAlarmTimePickerStyle" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_date_alarm_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_timepicker">
+
+                <ImageView
+                    android:id="@+id/img_calendar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/calendar"
+                    android:contentDescription="@string/content_desc_calendar" />
+
+                <TextView
+                    android:id="@+id/text_alarm_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_calendar"
+                    app:layout_constraintStart_toEndOf="@+id/img_calendar"
+                    app:layout_constraintTop_toTopOf="@+id/img_calendar" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_days_of_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_calendar">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:singleSelection="false" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/title_alarm_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/text_name"
+                android:textColor="?attr/colorOutline"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_date_alarm_info" />
+
+            <EditText
+                android:id="@+id/edit_text_alarm_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:hint="@string/text_alarm_name"
+                android:ems="10"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="text"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_alarm_name" />
+
+            <View
+                android:id="@+id/divider_name_zone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_alarm_name" />
+
+            <TextView
+                android:id="@+id/title_spinner_zones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:text="@string/text_timezone"
+                android:textColor="?attr/colorOutline"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_name_zone" />
+
+            <Spinner
+                android:id="@+id/spinner_zones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:dropDownWidth="wrap_content"
+                android:popupBackground="@drawable/custom_spinner_bg"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_spinner_zones"
+                tools:listitem="@layout/spinner_item_zone" />
+
+            <View
+                android:id="@+id/divider_zone_ringtone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_zones" />
+
+            <LinearLayout
+                android:id="@+id/layout_ringtone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_zone_ringtone">
+
+                <TextView
+                    android:id="@+id/title_ringtone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/text_alarm_tone"
+                    android:textColor="?attr/colorOutline"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/text_ringtone_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    tools:ignore="RtlSymmetry" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="5dp"
+                    android:paddingBottom="6dp"
+                    android:progressTint="?attr/colorPrimary"
+                    android:thumbTint="?attr/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_ringtone_name" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_ringtone_snooze"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_ringtone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_snooze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_ringtone_snooze">
+
+            <TextView
+                android:id="@+id/title_snooze"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/text_snooze"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_snooze_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/content_desc_set_snooze"
+                android:textColor="?attr/colorOutline"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_snooze" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_snooze"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:thumb="@drawable/custom_switch_thumb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/white"
+                app:track="@drawable/custom_switch_track"
+                app:trackTint="@null" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:id="@+id/divider_snooze_vibr"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_snooze" />
+
+            <TextView
+                android:id="@+id/title_vibration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/text_vibration"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_snooze_vibr" />
+
+            <TextView
+                android:id="@+id/title_vibration_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/content_desc_set_vibr"
+                android:textColor="?attr/colorOutline"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_vibration" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_vibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:checked="true"
+            android:thumb="@drawable/custom_switch_thumb"
+            app:layout_constraintBottom_toBottomOf="@+id/title_vibration_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:thumbTint="@color/white"
+            app:track="@drawable/custom_switch_track"
+            app:trackTint="@null" />
+
+        <View
+            android:id="@+id/divider_vibr_countdown"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_vibration_status" />
+
+            <TextView
+                android:id="@+id/title_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/text_show_countdown"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_vibr_countdown" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="22dp"
+                android:checked="true"
+                android:thumb="@drawable/custom_switch_thumb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_vibr_countdown"
+                app:thumbTint="@color/white"
+                app:track="@drawable/custom_switch_track"
+                app:trackTint="@null" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_countdown">
+
+                <TextView
+                    android:id="@+id/text_countdown_days_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/text_days"
+                    android:textColor="?attr/colorOutline"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_countdown_hours_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:text="@string/text_hours"
+                    android:textColor="?attr/colorOutline"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@+id/text_countdown_days_title"
+                    app:layout_constraintTop_toTopOf="@+id/text_countdown_days_title" />
+
+                <TextView
+                    android:id="@+id/text_countdown_mins_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:text="@string/text_minutes"
+                    android:textColor="?attr/colorOutline"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@+id/text_countdown_hours_title"
+                    app:layout_constraintTop_toTopOf="@+id/text_countdown_hours_title" />
+
+                <TextView
+                    android:id="@+id/text_countdown_secs_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:text="@string/text_seconds"
+                    android:textColor="?attr/colorOutline"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_countdown_mins_title"
+                    app:layout_constraintTop_toTopOf="@+id/text_countdown_mins_title" />
+
+                <TextView
+                    android:id="@+id/text_countdown_days_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toTopOf="@+id/text_countdown_days_title"
+                    app:layout_constraintEnd_toEndOf="@+id/text_countdown_days_title"
+                    app:layout_constraintStart_toStartOf="@+id/text_countdown_days_title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_countdown_hrs_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toTopOf="@+id/text_countdown_hours_title"
+                    app:layout_constraintEnd_toEndOf="@+id/text_countdown_hours_title"
+                    app:layout_constraintStart_toStartOf="@+id/text_countdown_hours_title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_countdown_mins_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toTopOf="@+id/text_countdown_mins_title"
+                    app:layout_constraintEnd_toEndOf="@+id/text_countdown_mins_title"
+                    app:layout_constraintStart_toStartOf="@+id/text_countdown_mins_title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_countdown_secs_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toTopOf="@+id/text_countdown_secs_title"
+                    app:layout_constraintEnd_toEndOf="@+id/text_countdown_secs_title"
+                    app:layout_constraintStart_toStartOf="@+id/text_countdown_secs_title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="134dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/text_submit"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_countdown" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

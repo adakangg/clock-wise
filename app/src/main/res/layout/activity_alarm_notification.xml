@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#04050B"
+    android:clickable="false"
+    tools:context=".AlarmNotificationActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anim_wave_top"
+        android:layout_width="492dp"
+        android:layout_height="255dp"
+        android:layout_marginTop="-80dp"
+        android:rotation="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/wave_anim" />
+
+    <TextView
+        android:id="@+id/text_alarm_name_notif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="30dp"
+        android:textColor="@color/notification_text_gray"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_alarm_time_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="bottom"
+        android:paddingHorizontal="28dp"
+        android:textColor="@color/notification_text_gray"
+        android:textSize="90sp"
+        app:layout_constraintStart_toStartOf="@+id/text_alarm_name_notif"
+        app:layout_constraintTop_toBottomOf="@+id/text_alarm_name_notif" />
+
+    <TextView
+        android:id="@+id/text_alarm_ampm_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-18dp"
+        android:layout_marginBottom="13dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="bottom"
+        android:paddingBottom="25dp"
+        android:textColor="@color/notification_text_gray"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_alarm_time_notif"
+        app:layout_constraintStart_toEndOf="@+id/text_alarm_time_notif" />
+
+    <LinearLayout
+        android:id="@+id/layout_date_zone_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-35dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_alarm_time_notif">
+
+        <TextView
+            android:id="@+id/text_alarm_date_notif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textColor="@color/notification_text_blue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/text_alarm_time_notif"
+            app:layout_constraintTop_toBottomOf="@+id/text_alarm_time_notif" />
+
+        <View
+            android:id="@+id/divider_date_zone_notif"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="?attr/colorOutline" />
+
+        <TextView
+            android:id="@+id/text_alarm_zone_notif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOutline"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_snooze"
+        android:layout_width="149dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/btn_outline_ripple_bg"
+        android:text="@string/text_snooze"
+        android:textColor="@color/notification_text_blue"
+        android:textSize="22sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_date_zone_notif" />
+
+    <Button
+        android:id="@+id/btn_dismiss"
+        android:layout_width="145dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/text_dismiss"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_snooze"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_snooze" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anim_wave_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        android:layout_marginBottom="-22dp"
+        android:rotation="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/wave_anim" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

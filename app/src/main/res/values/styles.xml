@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAlarmTimePickerStyle" parent="AppTheme">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="android:textSize">45sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">?attr/primaryText</item>
+    </style>
+
+    <style name="CustomTimePickerStyle" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="materialClockStyle">@style/CustomClockFaceStyle</item>
+        <item name="chipStyle">@style/CustomTimePickerChipStyle</item>
+        <item name="materialTimePickerTitleStyle">@style/CustomTimePickerTitleStyle</item>
+        <item name="materialButtonOutlinedStyle">@style/CustomTimePickerAmPmStyle</item>
+    </style>
+
+    <style name="CustomTimePickerTitleStyle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="CustomTimePickerChipStyle" parent="Widget.MaterialComponents.TimePicker.Display">
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+    </style>
+
+    <style name="CustomClockFaceStyle" parent="Widget.MaterialComponents.TimePicker.Clock">
+        <item name="clockFaceBackgroundColor">?attr/colorSecondaryContainer</item>
+    </style>
+
+    <style name="CustomTimePickerAmPmStyle" parent="Widget.MaterialComponents.TimePicker.Button">
+        <item name="backgroundTint">@color/chip_bg_color</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+    </style>
+
+    <style name="CustomSnoozePickerTheme" parent="AppTheme">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">?attr/primaryText</item>
+    </style>
+
+    <style name="CustomChipGroupStyle" parent="Widget.MaterialComponents.Chip.Choice">
+         <item name="android:backgroundTint">@color/chip_bg_color</item>
+         <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipCornerRadius">13dp</item>
+    </style>
+
+    <style name="CustomToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="CustomCalendarViewStyle" parent="Theme.MaterialComponents.Light">
+        <item name="colorControlActivated">?attr/primaryText</item>
+        <item name="android:textColorPrimary">?attr/colorOutline</item>
+        <item name="android:text">20sp</item>
+    </style>
+
+    <style name="CustomCalendarDateTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@drawable/custom_calendar_day</item>
+    </style>
+
+    <style name="CustomCalendarWeekTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+</resources>

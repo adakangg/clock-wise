@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_theme_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anim_theme"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/title_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/label_theme"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anim_theme" />
+
+    <TextView
+        android:id="@+id/text_theme_description1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/message_theme_line1"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_theme" />
+
+    <TextView
+        android:id="@+id/text_theme_description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/message_theme_line2"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_theme_description1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_switch_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_theme_description2">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/poppins_medium"
+            android:thumb="@drawable/switch_theme_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.523"
+            app:thumbTint="?attr/colorSecondaryContainer"
+            app:track="@drawable/switch_theme_track"
+            app:trackTint="@null" />
+
+        <TextView
+            android:id="@+id/text_switch_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/text_light"
+            android:textColor="?attr/switchThemeNightText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_theme"
+            app:layout_constraintStart_toStartOf="@+id/switch_theme"
+            app:layout_constraintTop_toTopOf="@+id/switch_theme"
+            app:layout_constraintVertical_bias="0.566" />
+
+        <TextView
+            android:id="@+id/text_switch_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/text_dark"
+            android:textColor="?attr/switchThemeDayText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_theme"
+            app:layout_constraintEnd_toEndOf="@+id/switch_theme"
+            app:layout_constraintTop_toTopOf="@+id/switch_theme"
+            app:layout_constraintVertical_bias="0.566" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_attributions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_corner_ripple_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_attributions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/info" />
+
+        <TextView
+            android:id="@+id/text_attributions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/label_attributions_link"
+            android:textColor="?attr/colorOutline"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

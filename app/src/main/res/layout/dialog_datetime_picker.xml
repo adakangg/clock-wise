@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_datetime_picker"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title_datetime_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="26sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:dateTextAppearance="@style/CustomCalendarDateTextStyle"
+        android:theme="@style/CustomCalendarViewStyle"
+        android:weekDayTextAppearance="@style/CustomCalendarWeekTextStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_datetime_picker" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_timepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar_view">
+
+
+        <TextView
+            android:id="@+id/title_timepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_enter_time"
+            android:textColor="?attr/colorOutline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_text_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:inputType="number"
+            android:paddingHorizontal="16dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_timepicker" />
+
+        <TextView
+            android:id="@+id/colon"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_marginStart="6dp"
+            android:paddingHorizontal="6dp"
+            android:text="@string/text_colon"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_hr"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_hr"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_hr" />
+
+        <EditText
+            android:id="@+id/edit_text_min"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/edit_text_bg"
+            android:inputType="number"
+            android:paddingHorizontal="16dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/colon"
+            app:layout_constraintStart_toEndOf="@+id/colon"
+            app:layout_constraintTop_toTopOf="@+id/colon" />
+
+        <ToggleButton
+            android:id="@+id/btn_am_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/custom_toggle_btn_bg"
+            android:textColor="?attr/colorOnPrimary"
+            android:textOff="@string/text_pm"
+            android:textOn="@string/text_am"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_min"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_min"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

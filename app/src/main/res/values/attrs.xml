@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="switchOffBackground" format="color"/>
+    <attr name="switchOnBackground" format="color"/>
+    <attr name="switchThemeDayText" format="color"/>
+    <attr name="switchThemeNightText" format="color"/>
+    <attr name="mapMarker" format="color"/>
+    <attr name="primaryText" format="color"/>
+</resources>
